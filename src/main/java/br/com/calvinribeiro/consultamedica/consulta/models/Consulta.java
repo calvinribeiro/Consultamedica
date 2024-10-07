@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,6 +26,7 @@ public class Consulta {
     @Column(name = "PROFISSIONAL")
     private String profissional;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "idUsuario")
     private Usuario usuario;
